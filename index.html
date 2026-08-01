@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Muhammad Bilal — Projects & Work</title>
+  <meta name="description" content="Muhammad Bilal — 13-year-old maker. Links to projects, book, and YouTube." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <!-- tsParticles for background -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@3.7.2/tsparticles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@3.7.2/tsparticles.slim.min.js" defer></script>
+  <!-- Vanilla-tilt for card tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div id="tsparticles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Home">
+      <span class="logo-dot"></span>
+      Bilal
+    </a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="https://github.com/muhammadbilalcp" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Introduction">
+      <div class="hero-inner">
+        <div class="avatar-wrap">
+          <!-- visible background avatar kept for the neon effect -->
+          <div class="avatar" role="img" aria-label="Profile image" style="background-image: url('assets/profile.png')"></div>
+          <div class="avatar-glow" aria-hidden="true"></div>
+          <!-- accessible <img> for screen readers and easier sharing -->
+          <img src="assets/profile.png" alt="Muhammad Bilal — profile image" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0;margin:-1px" aria-hidden="false" />
+        </div>
+
+        <div class="hero-copy">
+          <h1 class="name">Muhammad Bilal</h1>
+          <p class="tagline">13‑year‑old maker — building study tools and fun web projects</p>
+          <p class="age-note" style="color:var(--muted);margin-top:6px;font-size:14px">
+            I'm not a professional dev — just a kid learning and sharing projects I build.
+          </p>
+
+          <p class="links" style="margin-top:16px">
+            <a class="btn" href="https://muhammadbilalcp.github.io/StudyLix/" target="_blank" rel="noopener">StudyLyx</a>
+            <a class="btn ghost" href="https://novaidecoder.netlify.app" target="_blank">Nova IDE</a>
+          </p>
+          <p class="actions">
+            <a class="text-link" href="#projects">See all projects ↓</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects" aria-label="Projects">
+      <h2 class="section-title">Projects & Sites</h2>
+      <div class="grid">
+        <a class="card tilt" data-tilt data-tilt-max="12" href="https://muhammadbilalcp.github.io/StudyLix/" target="_blank" rel="noopener">
+          <div class="card-inner">
+            <h3>StudyLyx</h3>
+            <p>Study platform — responsive & clean</p>
+            <span class="url">muhammadbilalcp.github.io/StudyLix</span>
+          </div>
+        </a>
+
+        <a class="card tilt" data-tilt data-tilt-max="12" href="https://novaidecoder.netlify.app" target="_blank" rel="noopener">
+          <div class="card-inner">
+            <h3>Nova IDE</h3>
+            <p>Online code editor / IDE</p>
+            <span class="url">novaidecoder.netlify.app</span>
+          </div>
+        </a>
+
+        <a class="card tilt" data-tilt data-tilt-max="12" href="https://bilalstudytools.netlify.app" target="_blank" rel="noopener">
+          <div class="card-inner">
+            <h3>StudyTools / The Desk</h3>
+            <p>All study tools in one place</p>
+            <span class="url">bilalstudytools.netlify.app</span>
+          </div>
+        </a>
+
+        <a class="card tilt" data-tilt data-tilt-max="12" href="https://callixt.netlify.app" target="_blank" rel="noopener">
+          <div class="card-inner">
+            <h3>Callix (Zoom clone)</h3>
+            <p>Real-time video demo</p>
+            <span class="url">callixt.netlify.app</span>
+          </div>
+        </a>
+
+        <a class="card tilt" data-tilt data-tilt-max="12" href="https://icons-paper-fc.vercel.app" target="_blank" rel="noopener">
+          <div class="card-inner">
+            <h3>Paper FC</h3>
+            <p>Icons / UI experiments</p>
+            <span class="url">icons-paper-fc.vercel.app</span>
+          </div>
+        </a>
+
+        <a class="card tilt" data-tilt data-tilt-max="12" href="https://store.pothi.com/book/muhammad-bilal-last-message/" target="_blank" rel="noopener">
+          <div class="card-inner">
+            <h3>My Book</h3>
+            <p>"Last Message" — available online</p>
+            <span class="url">store.pothi.com</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="book" class="highlight" aria-label="Featured">
+      <div class="highlight-inner">
+        <h2>Featured — My Book</h2>
+        <p>Grab a copy of "Last Message" — reflections and notes.</p>
+        <p><a class="btn" href="https://store.pothi.com/book/muhammad-bilal-last-message/" target="_blank" rel="noopener">Buy / Preview</a></p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-label="Contact">
+      <h2>Other links</h2>
+      <div class="contact-grid">
+        <a class="link-card" href="https://github.com/muhammadbilalcp" target="_blank" rel="noopener">GitHub</a>
+        <a class="link-card" href="https://icons-paper-fc.vercel.app" target="_blank" rel="noopener">YouTube (channel link)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Made by Muhammad Bilal — a 13‑year‑old learning and experimenting — © <span id="year"></span></small>
+  </footer>
+</body>
+</html>
