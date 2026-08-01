@@ -1,0 +1,112 @@
+:root{
+  --bg-1:#020617;
+  --bg-2:#06102a;
+  --accent-c1:#00f6ff;
+  --accent-c2:#ff00d6;
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --card-border: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  --text:#e8eef8;
+  --muted:#9fb0d9;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  min-height:100%;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 10% 10%, rgba(6,16,42,0.6), transparent),
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* Topbar */
+.topbar{
+  position:fixed;left:0;right:0;top:18px;display:flex;justify-content:space-between;align-items:center;padding:0 28px;z-index:40;
+}
+.brand{display:flex;gap:10px;align-items:center;color:var(--text);text-decoration:none;font-weight:600}
+.logo-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(90deg,var(--accent-c1),var(--accent-c2));box-shadow:0 0 18px rgba(0,255,255,0.08)}
+.topbar nav{display:flex;gap:14px;align-items:center}
+.topbar a{color:var(--muted);text-decoration:none;font-size:14px}
+.topbar a.cta{background:linear-gradient(90deg,var(--accent-c1),var(--accent-c2));padding:8px 12px;border-radius:10px;color:#001; font-weight:700}
+
+/* Hero */
+.hero{padding:110px 28px 60px;position:relative;z-index:2}
+.hero-inner{max-width:1100px;margin:0 auto;display:flex;gap:40px;align-items:center}
+.avatar-wrap{position:relative;width:220px;height:220px;flex:0 0 220px}
+.avatar{
+  width:100%;height:100%;border-radius:50%;
+  background-size:cover;background-position:center;
+  border-radius:50%;
+  position:relative;box-shadow:0 20px 60px rgba(1,2,6,0.6);
+  transform:translateZ(0);
+  overflow:hidden;border:4px solid rgba(255,255,255,0.04);
+}
+/* Neon / RGB glitch using pseudo elements */
+.avatar::before,
+.avatar::after{
+  content:"";position:absolute;inset:0;border-radius:50%;background-size:cover;background-position:center;mix-blend-mode:screen;pointer-events:none;
+  transition:transform .3s ease;
+}
+.avatar::before{background-image:inherit;filter:drop-shadow(0 6px 12px rgba(0,246,255,0.25)) hue-rotate(0deg);transform:translate(6px,-4px) scale(1.02);opacity:.7}
+.avatar::after{background-image:inherit;filter:drop-shadow(0 6px 12px rgba(255,0,214,0.22));transform:translate(-6px,4px) scale(1.02);opacity:.7}
+
+/* Animated subtle jitter for glitch */
+@keyframes avatar-jitter{
+  0%{transform:translate(0,0)}
+  20%{transform:translate(-2px,1px)}
+  40%{transform:translate(3px,-1px)}
+  60%{transform:translate(-1px,2px)}
+  80%{transform:translate(2px,-2px)}
+  100%{transform:translate(0,0)}
+}
+.avatar{animation:avatar-jitter 6s ease-in-out infinite}
+
+/* Glow */
+.avatar-glow{position:absolute;inset:-10px;border-radius:50%;background:radial-gradient(circle at 30% 40%, rgba(0,246,255,0.12), transparent 20%, rgba(255,0,214,0.06) 50%);filter:blur(28px);pointer-events:none}
+
+/* Hero copy */
+.hero-copy{flex:1;max-width:700px}
+.name{font-size:44px;margin:0 0 6px}
+.tagline{color:var(--muted);margin-top:0;margin-bottom:18px}
+.links .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent-c1),var(--accent-c2));color:#001;font-weight:700;margin-right:10px;text-decoration:none}
+.links .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+
+.text-link{color:var(--accent-c1);text-decoration:none}
+
+/* Projects Grid */
+.section-title{max-width:1100px;margin:10px auto 18px;padding:0 28px;font-size:20px;color:var(--muted)}
+.projects .grid{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{display:block;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+.card::after{content:"";position:absolute;inset:0;padding:1px;border-radius:14px;background:linear-gradient(120deg, rgba(0,246,255,0.06), rgba(255,0,214,0.04));mix-blend-mode:overlay;pointer-events:none}
+.card-inner h3{margin:0 0 6px}
+.card-inner p{margin:0 0 8px;color:var(--muted);font-size:13px}
+.url{font-size:12px;color:rgba(255,255,255,0.45)}
+
+/* Highlight */
+.highlight{max-width:1100px;margin:34px auto;padding:28px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.highlight-inner{display:flex;gap:24px;align-items:center;justify-content:space-between}
+.highlight .btn{padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent-c2),var(--accent-c1));color:#001;text-decoration:none}
+
+/* Contact */
+.contact{max-width:1100px;margin:28px auto;padding:0 28px}
+.contact-grid{display:flex;gap:12px;flex-wrap:wrap}
+.link-card{display:inline-block;padding:12px 16px;background:var(--glass);border-radius:10px;color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
+
+/* Footer */
+.site-footer{text-align:center;padding:26px 16px;color:var(--muted);opacity:.9}
+
+/* Responsiveness */
+@media (max-width:860px){
+  .hero-inner{flex-direction:column;align-items:center;text-align:center}
+  .avatar-wrap{margin-bottom:18px}
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .avatar, .card, .avatar::before, .avatar::after { animation: none !important; transition: none !important; }
+}
